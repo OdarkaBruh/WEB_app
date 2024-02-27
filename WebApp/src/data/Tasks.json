@@ -1,0 +1,31 @@
+[
+    {
+        "name": "MyFirstTask",
+        "finished":true,
+        "deadline":"February 19, 2024",
+        "desc": "to make sure that the data returned is in JSON format. Then you can consume the data within your application.",
+        "subtask": [
+            {"name":"123",
+            "finished":false},
+
+            {"name":"456",
+            "finished":false}
+        ]    
+    },
+    {
+        "name": "MyFirstTask",
+        "desc": "to make sure that the data returned is in JSON format. Then you can consume the data within your application.",
+        "finished":false,
+        "deadline":"February 20, 2024",
+        "subtask": [
+            {"name":"123",
+            "finished":false},
+
+            {"name":"456",
+            "finished":false},
+            
+            {"name":"789",
+            "finished":false}
+        ]    
+    }
+]

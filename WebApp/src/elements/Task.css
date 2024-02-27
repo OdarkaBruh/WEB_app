@@ -1,0 +1,36 @@
+.tasksAll h1{
+    margin: 0px;
+}
+.tasksAll h2{
+    margin: 0px;
+}
+.task {
+    text-align: left;
+    margin-bottom: 50px;
+    
+}
+.task .taskTop {
+    display: inline-flex;
+}
+
+.task h1{
+    font-size: 25px;
+    color: #545CA5;
+}
+.task h2{
+    font-size: 20px;
+    color: #99A8DC;
+}
+
+.subTasks {
+    margin-left: 50px;
+}
+
+.subTasks h3 {
+    color:#99A8DC;
+    font-size: 12px;
+}
+.subTasks p {
+    color: inherit;
+    font-size: 10px;
+}
