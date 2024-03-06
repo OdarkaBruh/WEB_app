@@ -50,6 +50,7 @@
 .CertainTaskTop textarea:focus{
     outline: none;
 } 
+
 .CertainTaskInfo {
     min-height: 640px;
     background-color: white;
