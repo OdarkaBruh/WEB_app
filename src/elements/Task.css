@@ -1,38 +1,51 @@
-.ViewDetailed {
-    display: inline-flex;
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.choosenFullTask {
-    background-color: #F4F7FF;
+.ViewDetailed {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: row;
 }
-.tasksAll {
-    margin-right: 20px;
-    border-radius: 25px;
+
+.ViewDetailed section {
+    min-height: 700px;
+    margin-right: 30px;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 25px 25px 0px 0px;
+    padding: 0px;
+}
+
+.show-all-tasks {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     height: 100%;
     width: 70%;
+    font-size: 0.5em;
 }
-.tasksAll h1{
-    margin: 0px;
-}
-.tasksAll h2{
+.show-all-tasks h1, .show-all-tasks h2{
     margin: 0px;
 }
 
-.CertainTask {
+.show-all-tasks-certain {
     width: 30%;
     height: 100%;
 }
 
 .CertainTaskTop {
     width: 100%;
-    border-radius: 25px 25px 0px 0px;
     background-color: #B0C2FF;
 }
+
 .CertainTaskTop h1{
     margin: 0px;
     font-size: 35px;
     padding: 8px;
-    color: white;
+    color: #FFFFF;
 }
 
 .CertainTaskTop textarea {
@@ -40,7 +53,6 @@
     margin: 0px;
     font-size: 20px;
     padding: 12px;
-    color: white;
     width:80%;
     border: 0px;
     border-bottom: 2px solid #99A8DC;
@@ -51,9 +63,18 @@
     outline: none;
 } 
 
+.CertainTaskInfo ul {
+    width: 80%;
+    text-align: left;
+}
+.CertainTaskInfo li {
+    margin-left: 20px;
+    color:#545CA5;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
 .CertainTaskInfo {
-    min-height: 640px;
-    background-color: white;
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -71,7 +92,7 @@
 }
 
 .DeadlineAndPriority {
-    padding-top: 20px;
+    padding-top: 10px;
     width: 100%;
     height: 100%;
     background-color: #F4F7FF;
@@ -105,34 +126,34 @@
     outline: none;
 }
 
-.Top {
+.show-all-tasks-top {
+    width: 100%;
     background-color: #B0C2FF;
     border-radius: 25px 25px 0px 0px;
 }
 
-.Top h1{
+.show-all-tasks-top h1{
     font-size: 35px;
     padding: 8px;
     color: white;
 }
 
-.Bottom {
+.show-all-tasks-bottom {
     padding: 20px;
     min-height: 600px;
     background-color: white;
 }
 
-.Bottom button {
+.show-all-tasks-bottom button {
     pointer-events: none;
 }
 .task {
     padding:20px;
     text-align: left;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
     
-}
-.task .taskTop {
-    display: inline-flex;
 }
 
 .task h1{
@@ -155,4 +176,62 @@
 .subTasks p {
     color: inherit;
     font-size: 10px;
+}
+
+.task-icon{
+    aspect-ratio: 1 ;
+    color:#545CA5;
+}
+
+.print-task-icon img{
+    height: 100%;
+    margin: auto;
+    width: 3%;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.show-all-TaskTop {
+    height: 10%;
+    width: 100%;
+}
+
+.show-all-TaskTop h1 {
+    width: 80%;
+    display: inline-block;
+}
+
+.Sidebar { 
+    background-color: #B0C2FF !important;
+    min-width: 50px;
+    width:2%;
+    float: left;
+    border-radius: 0px 25px 0px 0px !important;
+}
+
+.Sidebar img {
+    width: 20px;
+    margin-top: 15px;
+    height: auto;
+}
+.print-full-task h1 {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.print-full-task-TaskTop {
+    background-color: #B0C2FF;
+    padding:15px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.print-full-task-TaskTop .task-icon {
+    width: 20px;
+}
+
+.print-full-task-TaskTop h1{
+    margin-bottom: 0px;
+    margin: 0px;
+    color: #FFFFFF;
+    font-size: 25px;
 }

@@ -2,13 +2,15 @@ import tasks from '../data/Tasks.json';
 import { useState } from 'react';
 import './Task.css';
 
-
-//Paste image stuff here later
 function IsTaskFinished(a) {
-    if (a.finished){
-        return (<h1>+ </h1>);
-}
-return (<h1>- </h1>);
+    if (a.finished){ 
+        return(<>
+            <img className='task-icon' src="../../img/icons/check.svg" alt="Task is finished"/>
+            </>)
+    }
+    return(<>
+        <img className='task-icon' src="../../img/icons/cross.svg" alt="Task is unfinished"/>
+    </>)
 }
 
 function dateConvector(a){
@@ -18,9 +20,10 @@ function dateConvector(a){
 function printFullTasks(id) {
     let task = tasks[id];
     return(
-    <>
-            <div className='CertainTaskTop'>
-                <h1>{IsTaskFinished(task)} {task.name}</h1>
+    <>      
+        <div className="print-full-task">
+            <div className='print-full-task-TaskTop'>
+                <h1><span className='print-task-icon'> {IsTaskFinished(task)} </span> {task.name}</h1>
             </div>
             <div className='CertainTaskInfo'>
                 <div className='DeadlineAndPriority'>
@@ -28,23 +31,33 @@ function printFullTasks(id) {
                 <h1>Priority: {task.priority}</h1>
                 <p>{task.desc}</p>
                 </div>
-                <p>dadsasd</p>
+                <ul>
+                    <li>Зробити №1</li>
+                    <li>Зробити №2</li>
+                    <li>Зробити №3</li>
+                    <li>Зробити №4</li>
+                    <li>Зробити №5</li>
+                </ul>
             </div>
+        </div>
+            
     </>)
 }
 
 function CreateFullTasks() {
     return(
     <>
-            <div className='CertainTaskTop'>
-                <textarea id="name" maxLength="60"></textarea>
-            </div>
-            <div className='CertainTaskInfo'>
-                <div className='DeadlineAndPriority'>
-                <h1>Until day:&emsp;<input type="date"></input></h1>
-                <br />
-                <h1>Priority:&emsp;<input type="number" max={5} min={0}></input></h1>
-                <textarea id="desc" placeholder="Describe task..." maxLength="100"></textarea>
+            <div className="full-task-left-sidebar">
+                <div className='CertainTaskTop'>
+                    <textarea id="name" maxLength="60"></textarea>
+                </div>
+                <div className='CertainTaskInfo'>
+                    <div className='DeadlineAndPriority'>
+                    <h1>Until day:&emsp;<input type="date"></input></h1>
+                    <br />
+                    <h1>Priority:&emsp;<input type="number" max={5} min={0}></input></h1>
+                    <textarea id="desc" placeholder="Describe task..." maxLength="100"></textarea>
+                    </div>
                 </div>
             </div>
     </>)
@@ -57,35 +70,33 @@ function printTasks() {
     return (
     <>
         <div className='ViewDetailed'>
-            <div className='tasksAll'>
-                <div className='Top'>
+            <ShowSidebar />
+            <section className='show-all-tasks'>
+                <div className='show-all-tasks-top'>
                     <h1>Today</h1>
                 </div>
-                <div className='Bottom'>
-                {tasks.map(item => (
-                    <div key={item.id} className={item.id===fullTask ? 'choosenFullTask' : 'v'} onClick={()=>setFullTask(item.id)}>
-                        <div className='task'>
-                            <div className='taskTop'>
-                            {IsTaskFinished(item)}
-                            <h1>{item.name}   - {item.subtask.length!==0 && <a>0/{item.subtask.length}</a>}</h1>
+                <div className='show-all-tasks-bottom'>
+                    {tasks.map(item => (
+                        <div key={item.id} className={item.id===fullTask ? 'choosenFullTask' : 'v'} onClick={()=>setFullTask(item.id)}>
+                            <div className='task'>
+                                <div className='show-all-TaskTop'>
+                                    <span className='print-task-icon'> {IsTaskFinished(item)} </span>
+                                    <h1>{item.name}   - {item.subtask.length!==0 && <a>0/{item.subtask.length}</a>}</h1>
+                                </div>
+                                <h2>{item.desc}</h2>
+                                {/*
+                                *<h2>{dateConvector(item)}</h2>
+                                {item.subtask.length!==0 && printSubTasks(item.subtask)}*/}
                             </div>
-                            <h2>{item.desc}</h2>
-
-                            {/*
-                            *<h2>{dateConvector(item)}</h2>
-                            {item.subtask.length!==0 && printSubTasks(item.subtask)}*/}
-                            </div>
-                    </div>
-                    
-                ))}
-            </div>
-            </div>
+                        </div>
+                        
+                    ))}
+                </div>
+            </section>
             
-            <div className='CertainTask'>
-            {//{printFullTasks(fullTask)} 
-            }
-            {CreateFullTasks()}
-            </div>
+            <section className='show-all-tasks-certain'>
+            {printFullTasks(fullTask)}
+            </section>
         </div>
     </>)
 }
@@ -113,5 +124,15 @@ export default function ShowTask() {
     <>
     {printTasks()}
     </>
+    )
+}
+
+function ShowSidebar(subtasks) {
+    return(
+        <>
+        <section className='Sidebar'>
+            <img className='task-icon' src="../../img/icons/menu.svg" alt="menu"/>
+        </section>
+        </>
     )
 }
