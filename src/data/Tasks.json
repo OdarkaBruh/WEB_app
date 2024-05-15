@@ -6,29 +6,56 @@
         "deadline":"February 19, 2024",
         "desc": "to make sure that the data returned is in JSON format. Then you can consume the data within your application.",
         "subtask": [
-            {"name":"123",
-            "finished":false},
+            {"id":0,
+            "name":"F123",
+            "finished":true},
 
-            {"name":"456",
-            "finished":false}
+            {"id":1,
+            "name":"F456",
+            "finished":true}
         ],
-        "priority":2    
+        "priority":2,
+        "category": ["Homework"]   
     },
     {
         "id":1,
         "name": "MySecondTask",
-        "desc": "to make sure that the data returned is in JSON format. Then you can consume the data within your application.",
+        "desc": "Some desc",
         "finished":false,
         "deadline":"February 20, 2024",
         "subtask": [
-            {"name":"123",
+            
+            { "id":2,
+            "name":"123",
             "finished":false},
 
-            {"name":"456",
+            {"id":3,
+            "name":"456",
             "finished":false},
             
-            {"name":"789",
+            {"id":4,
+            "name":"789",
             "finished":false}
-        ]    
+        ],
+        "category": ["First"]
+    },
+    {
+        "id":2,
+        "name": "MyThirdTask",
+        "desc": "Some desc",
+        "finished":false,
+        "deadline":"February 20, 2024",
+        "subtask": [
+        ],
+        "category": ["First"]
+    },
+    {
+        "id":3,
+        "name": "MyFourthTask",
+        "desc": "Some desc",
+        "finished":false,
+        "deadline":"February 20, 2024",
+        "subtask": [],
+        "category":[]
     }
 ]
