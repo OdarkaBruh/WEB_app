@@ -1,6 +1,6 @@
 import tasks from '../data/Tasks.json';
 import categories from '../data/Categories.json';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Task.css';
 import './Sidebar.css';
 import './EditPanel.css';
