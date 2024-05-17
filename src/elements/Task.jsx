@@ -14,11 +14,11 @@ var TabletVersion = 768;
 function IsTaskFinished(a) {
     if (a.finished){ 
         return(<>
-            <img className='task-icon' src="../../img/icons/check.svg" alt="Task is finished"/>
+            <img className='task-icon' src="/img/icons/check.svg" alt="Task is finished"/>
             </>)
     }
     return(<>
-        <img className='task-icon' src="../../img/icons/cross.svg" alt="Task is unfinished"/>
+        <img className='task-icon' src="/img/icons/cross.svg" alt="Task is unfinished"/>
     </>)
 }
 
@@ -215,7 +215,7 @@ function printTasks() {
                         display: (window.innerWidth<mobileVersion && pageNum !==1) && 'none' }}>
                 <div className='show-all-tasks-top'>
                     <div className='ButtonMobile'>
-                        <img className='task-icon' src="../../img/icons/menu.svg" alt="menu" onClick={()=>setPageNum(0)} />
+                        <img className='task-icon' src="/img/icons/menu.svg" alt="menu" onClick={()=>setPageNum(0)} />
                     </div>
                     <h1>Today</h1>
                 </div>
@@ -261,7 +261,7 @@ function ShortSidebar({toggleState}) {
 }
 
 function imgSidebar({toggleState}){
-    return(<img className='task-icon' src="../../img/icons/menu.svg" alt="menu" 
+    return(<img className='task-icon' src="/img/icons/menu.svg" alt="menu" 
             onClick={()=>toggleState()}/>)
 }
 
